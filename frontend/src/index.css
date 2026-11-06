@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { @apply border-pyra-border; }
+  body { @apply bg-pyra-bg text-pyra-text; }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-pyra-bg; }
+  ::-webkit-scrollbar-thumb { @apply bg-pyra-border rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-pyra-muted; }
+}
+
+.maplibregl-map { font-family: inherit; }
+.maplibregl-popup-content { @apply bg-pyra-card text-pyra-text border border-pyra-border rounded-lg shadow-xl p-3 text-sm; }
+.maplibregl-popup-close-button { @apply text-pyra-muted hover:text-pyra-text text-lg; }

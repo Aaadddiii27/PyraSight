@@ -1,0 +1,136 @@
+{
+  "model_name": "xgboost",
+  "validation_results": {
+    "logistic_regression": {
+      "accuracy": 0.7188826215417674,
+      "precision": 0.55682216766047,
+      "recall": 0.7675261885576148,
+      "f1": 0.6454126575416723,
+      "confusion_matrix": [
+        [
+          51717,
+          22743
+        ],
+        [
+          8655,
+          28575
+        ]
+      ],
+      "roc_auc": 0.77779706031335,
+      "pr_auc": 0.6600828773946069
+    },
+    "random_forest": {
+      "accuracy": 0.7613662816724863,
+      "precision": 0.6129321574238186,
+      "recall": 0.7709642761214075,
+      "f1": 0.6829250883308152,
+      "confusion_matrix": [
+        [
+          56334,
+          18126
+        ],
+        [
+          8527,
+          28703
+        ]
+      ],
+      "roc_auc": 0.8426943377220636,
+      "pr_auc": 0.7606127098780505
+    },
+    "xgboost": {
+      "accuracy": 0.7786104396096338,
+      "precision": 0.6410059772189015,
+      "recall": 0.7633360193392426,
+      "f1": 0.6968430086434132,
+      "confusion_matrix": [
+        [
+          58544,
+          15916
+        ],
+        [
+          8811,
+          28419
+        ]
+      ],
+      "roc_auc": 0.8543865806048152,
+      "pr_auc": 0.7718536990780952
+    }
+  },
+  "test_results": {
+    "xgboost": {
+      "accuracy": 0.7951028403525955,
+      "precision": 0.6737297391760234,
+      "recall": 0.7520604730553524,
+      "f1": 0.7107434207494123,
+      "confusion_matrix": [
+        [
+          66574,
+          14936
+        ],
+        [
+          10168,
+          30842
+        ]
+      ],
+      "roc_auc": 0.8683715967250791,
+      "pr_auc": 0.7837892299973914
+    }
+  },
+  "shap_global_importance": {
+    "aspect": 0.14646092057228088,
+    "curvature": 0.17654936015605927,
+    "d2m": 0.2880151867866516,
+    "dem": 0.09911464154720306,
+    "lai": 0.09775440394878387,
+    "lst_day": 0.1427098661661148,
+    "lst_night": 0.03939555585384369,
+    "ndvi": 0.31354373693466187,
+    "rh": 0.024767205119132996,
+    "roads_distance": 0.10349953174591064,
+    "slope": 0.4375306963920593,
+    "smi": 0.4987438917160034,
+    "sp": 0.2648598253726959,
+    "ssrd": 0.2556911110877991,
+    "t2m": 0.44224342703819275,
+    "tp": 0.0489804707467556,
+    "wind_direction": 0.12241566181182861,
+    "wind_speed": 0.020317796617746353,
+    "lc_agriculture": 0.18340347707271576,
+    "lc_forest": 0.16692693531513214,
+    "lc_grassland": 0.12115743011236191,
+    "lc_settlement": 0.013327043503522873,
+    "lc_shrubland": 0.14571256935596466,
+    "lc_sparse_vegetation": 0.09612912684679031,
+    "lc_water_bodies": 0.021464768797159195,
+    "lc_wetland": 0.028420664370059967,
+    "population": 0.2832951843738556
+  },
+  "shap_error": null,
+  "training_timestamp": "2026-11-06T17:18:21.478807",
+  "dataset": "Mesogeos Danger Forecasting",
+  "split_strategy": "chronological_group_aware",
+  "date_boundaries": {
+    "train_end": "2018-12-31",
+    "validation_start": "2019-01-01",
+    "validation_end": "2020-12-31",
+    "test_start": "2021-01-01"
+  },
+  "n_train": 199980,
+  "n_validation": 111690,
+  "n_test": 122520,
+  "n_positive_groups": {
+    "train": 5951,
+    "validation": 1241,
+    "test": 1367
+  },
+  "n_negative_groups": {
+    "train": 11902,
+    "validation": 2482,
+    "test": 2717
+  },
+  "limitations": [
+    "Temporal split; not spatially independent.",
+    "Negative groups are sampled at a fixed ratio to positive groups.",
+    "Historical classification results do not establish operational forecast skill."
+  ]
+}

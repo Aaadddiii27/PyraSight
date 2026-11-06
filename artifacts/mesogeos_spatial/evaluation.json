@@ -1,0 +1,170 @@
+{
+  "model_name": "random_forest",
+  "validation_results": {
+    "logistic_regression": {
+      "accuracy": 0.7226333967716924,
+      "precision": 0.6668917615280725,
+      "recall": 0.5198721564203798,
+      "f1": 0.584275360787711,
+      "confusion_matrix": [
+        [
+          74868,
+          13812
+        ],
+        [
+          25538,
+          27652
+        ]
+      ],
+      "roc_auc": 0.7924197295115603,
+      "pr_auc": 0.6506875331030683
+    },
+    "random_forest": {
+      "accuracy": 0.7686544019172482,
+      "precision": 0.6952662154648466,
+      "recall": 0.6817634893777026,
+      "f1": 0.6884486506497575,
+      "confusion_matrix": [
+        [
+          72786,
+          15894
+        ],
+        [
+          16927,
+          36263
+        ]
+      ],
+      "roc_auc": 0.8443765615694345,
+      "pr_auc": 0.7563804766391637
+    },
+    "xgboost": {
+      "accuracy": 0.7598223725946289,
+      "precision": 0.7536893513111795,
+      "recall": 0.533859748072946,
+      "f1": 0.6250082539123545,
+      "confusion_matrix": [
+        [
+          79400,
+          9280
+        ],
+        [
+          24794,
+          28396
+        ]
+      ],
+      "roc_auc": 0.8403619646185456,
+      "pr_auc": 0.7564967972349803
+    }
+  },
+  "test_results": {
+    "random_forest": {
+      "accuracy": 0.7792726779293032,
+      "precision": 0.6228255845072136,
+      "recall": 0.6005160684963641,
+      "f1": 0.6114674023383851,
+      "confusion_matrix": [
+        [
+          89257,
+          15503
+        ],
+        [
+          17030,
+          25600
+        ]
+      ],
+      "roc_auc": 0.8139944192447028,
+      "pr_auc": 0.6541845133186617
+    }
+  },
+  "classification_report": {
+    "no_fire": {
+      "precision": 0.8397734436008166,
+      "recall": 0.8520141275295915,
+      "f1-score": 0.8458495027174042,
+      "support": 104760.0
+    },
+    "fire": {
+      "precision": 0.6228255845072136,
+      "recall": 0.6005160684963641,
+      "f1-score": 0.6114674023383851,
+      "support": 42630.0
+    },
+    "accuracy": 0.7792726779293032,
+    "macro avg": {
+      "precision": 0.731299514054015,
+      "recall": 0.7262650980129778,
+      "f1-score": 0.7286584525278947,
+      "support": 147390.0
+    },
+    "weighted avg": {
+      "precision": 0.7770250398206395,
+      "recall": 0.7792726779293032,
+      "f1-score": 0.7780585471630411,
+      "support": 147390.0
+    }
+  },
+  "shap_global_importance": {
+    "aspect": 0.0035719373930470236,
+    "curvature": 0.011406889470079676,
+    "d2m": 0.05386567588504608,
+    "dem": 0.010433660065907579,
+    "lai": 0.010010045087251456,
+    "lst_day": 0.023529853558550806,
+    "lst_night": 0.023012686859783416,
+    "ndvi": 0.01923644266882291,
+    "rh": 0.002973765765703271,
+    "roads_distance": 0.011570172634769962,
+    "slope": 0.06352938658402535,
+    "smi": 0.07308241648693714,
+    "sp": 0.03965125534147877,
+    "ssrd": 0.03401906640914531,
+    "t2m": 0.06403567999285208,
+    "tp": 0.008022262089109706,
+    "wind_direction": 0.0030594345468557636,
+    "wind_speed": 0.0021044768408593987,
+    "lc_agriculture": 0.010774710600239051,
+    "lc_forest": 0.016590490930591128,
+    "lc_grassland": 0.012589617869005391,
+    "lc_settlement": 0.0004453425327122358,
+    "lc_shrubland": 0.023870938100639654,
+    "lc_sparse_vegetation": 0.008720578425749016,
+    "lc_water_bodies": 0.00028205655397941305,
+    "lc_wetland": 0.002221153469001278,
+    "population": 0.02555555490691396
+  },
+  "shap_error": null,
+  "training_timestamp": "2026-11-06T17:43:29.663399",
+  "dataset": "Mesogeos Danger Forecasting",
+  "split_strategy": "spatial_1_degree_blocks_with_25km_train_buffer",
+  "buffer_km": 25.0,
+  "minimum_train_to_held_out_distance_km": 25.003742355900997,
+  "original_buffered_train_groups_before_cap": 11257,
+  "n_groups": {
+    "train": 6666,
+    "validation": 4729,
+    "test": 4913
+  },
+  "n_fire_groups": {
+    "train": 2220,
+    "validation": 1773,
+    "test": 1421
+  },
+  "n_no_fire_groups": {
+    "train": 4446,
+    "validation": 2956,
+    "test": 3492
+  },
+  "n_rows": {
+    "train": 199980,
+    "validation": 141870,
+    "test": 147390
+  },
+  "limitations": [
+    "Spatial holdout is within the dataset geographic domain, not proof of global generalization.",
+    "The 25 km buffer is applied from all validation and test sample locations to training locations.",
+    "Validation is used for model selection and is not merged into final training.",
+    "Negative sample groups are used as provided by the dataset; metrics depend on dataset sampling.",
+    "Historical classification performance does not establish operational forecast skill.",
+    "The split is spatial, not chronological; time periods may occur in every split."
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "feature_columns": [
+    "aspect",
+    "curvature",
+    "d2m",
+    "dem",
+    "lai",
+    "lst_day",
+    "lst_night",
+    "ndvi",
+    "rh",
+    "roads_distance",
+    "slope",
+    "smi",
+    "sp",
+    "ssrd",
+    "t2m",
+    "tp",
+    "wind_direction",
+    "wind_speed",
+    "lc_agriculture",
+    "lc_forest",
+    "lc_grassland",
+    "lc_settlement",
+    "lc_shrubland",
+    "lc_sparse_vegetation",
+    "lc_water_bodies",
+    "lc_wetland",
+    "population"
+  ],
+  "meta_columns": [
+    "x",
+    "y",
+    "time",
+    "sample"
+  ],
+  "target": "binary_fire_danger",
+  "target_mapping": {
+    "1": "fire_danger",
+    "0": "no_danger"
+  },
+  "model_type": "random_forest",
+  "random_seed": 42,
+  "split_strategy": "spatial_1_degree_blocks_with_25km_train_buffer",
+  "block_assignment": {
+    "test_fraction": 0.2,
+    "validation_fraction": 0.15,
+    "seed": 42
+  },
+  "buffer_km": 25.0,
+  "minimum_train_to_held_out_distance_km": 25.003742355900997,
+  "training_refit_policy": "train_only; validation not merged into final fit",
+  "n_train": 199980,
+  "n_validation": 141870,
+  "n_test": 147390,
+  "geographic_coverage": "Mediterranean region (approximate)",
+  "temporal_coverage": "Historical 2006-2022; spatial split is not chronological",
+  "spatial_independence": true
+}

@@ -1,0 +1,190 @@
+
+{
+  "project_name": "PyraSight",
+  "project_title": "Wildfire Intelligence, Explainable Predictions & Geospatial Awareness",
+  "project_type": "Academic Research and Decision-Support Prototype",
+  "last_updated": "2026-11-06",
+  "current_phase": 6,
+  "current_phase_name": "Deployment and Documentation",
+  "project_status": "Documentation and deployment preparation in progress",
+  "completed_phases": [
+    {
+      "phase": 1,
+      "name": "Command Center Fixes",
+      "status": "completed",
+      "details": [
+        "Fixed Active Models KPI status matching",
+        "Corrected Detection Activity chart date aggregation"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "Core Functionality Testing",
+      "status": "completed",
+      "details": [
+        "Tested Hazard Forecast inference",
+        "Verified Incident Explorer workflows",
+        "Verified Reports and Alerts functionality",
+        "Implemented incident editing and deletion",
+        "Fixed report generation compatibility"
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "SQLite Persistence",
+      "status": "completed",
+      "details": [
+        "Integrated SQLite persistence",
+        "Verified incident persistence across backend restarts",
+        "Verified prediction history persistence",
+        "Verified alert rule persistence",
+        "Verified report persistence"
+      ]
+    },
+    {
+      "phase": 4,
+      "name": "Machine Learning Verification",
+      "status": "completed",
+      "details": [
+        "Evaluated Algerian XGBoost classifier",
+        "Implemented chronological group-aware Mesogeos evaluation",
+        "Implemented spatially separated Mesogeos evaluation",
+        "Generated SHAP feature importance",
+        "Documented dataset and evaluation limitations"
+      ]
+    },
+    {
+      "phase": 5,
+      "name": "UI Optimization and Final Testing",
+      "status": "completed",
+      "details": [
+        "Fixed Mesogeos inference imputer loading",
+        "Fixed Global Fire Map data-rendering race condition",
+        "Added detection coordinate validation",
+        "Added automatic map bounds fitting",
+        "Removed unreachable frontend JSX",
+        "Improved Git ignore rules",
+        "Verified frontend production build",
+        "Verified map markers and detection details",
+        "Completed core application regression checks"
+      ]
+    }
+  ],
+  "current_phase_details": {
+    "phase": 6,
+    "name": "Deployment and Documentation",
+    "status": "in_progress",
+    "completed_tasks": [
+      "Audited project documentation and repository structure",
+      "Created root README.md"
+    ],
+    "pending_tasks": [
+      "Update PROJECT_LOG.md",
+      "Create backend requirements.txt",
+      "Create project overview documentation",
+      "Create architecture documentation",
+      "Document datasets and ML evaluation",
+      "Document API endpoints",
+      "Create installation documentation",
+      "Prepare deployment configuration",
+      "Clean repository for GitHub",
+      "Perform final clean-environment verification"
+    ]
+  },
+  "technology_stack": {
+    "frontend": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "MapLibre GL JS"
+    ],
+    "backend": [
+      "Python",
+      "FastAPI",
+      "Uvicorn"
+    ],
+    "database": [
+      "SQLite"
+    ],
+    "machine_learning": [
+      "Scikit-learn",
+      "XGBoost",
+      "SHAP",
+      "Pandas",
+      "NumPy"
+    ]
+  },
+  "machine_learning_models": {
+    "algerian": {
+      "algorithm": "XGBoost",
+      "purpose": "Fire versus no-fire classification",
+      "status": "trained_and_loaded"
+    },
+    "mesogeos_temporal": {
+      "algorithm": "XGBoost",
+      "split_strategy": "Chronological group-aware split",
+      "test_metrics": {
+        "accuracy": 0.7951,
+        "precision": 0.6737,
+        "recall": 0.7521,
+        "f1": 0.7107,
+        "roc_auc": 0.8684,
+        "pr_auc": 0.7838
+      },
+      "status": "trained_and_loaded"
+    },
+    "mesogeos_spatial": {
+      "algorithm": "RandomForest",
+      "split_strategy": "Spatial blocks with 25 km training buffer",
+      "test_metrics": {
+        "accuracy": 0.7793,
+        "precision": 0.6228,
+        "recall": 0.6005,
+        "f1": 0.6115,
+        "roc_auc": 0.8140,
+        "pr_auc": 0.6542
+      },
+      "status": "trained_and_loaded"
+    }
+  },
+  "database": {
+    "engine": "SQLite",
+    "path": "backend/data/pyrasight.db",
+    "persistence_verified": true
+  },
+  "frontend": {
+    "framework": "React",
+    "language": "TypeScript",
+    "build_command": "npm run build",
+    "build_verified": true,
+    "development_command": "npm run dev"
+  },
+  "backend": {
+    "framework": "FastAPI",
+    "server": "Uvicorn",
+    "port": 8000,
+    "api_docs": "/api/docs"
+  },
+  "validation": {
+    "command_center": "passed",
+    "hazard_forecast": "previously_verified",
+    "incident_explorer": "passed",
+    "reports_and_alerts": "passed",
+    "global_fire_map": "passed",
+    "sqlite_persistence": "passed",
+    "frontend_build": "passed",
+    "automated_test_coverage": "not_fully_verified",
+    "deployment": "pending"
+  },
+  "known_limitations": [
+    "FIRMS thermal detections are not necessarily confirmed wildfires",
+    "Model predictions are based on historical datasets and supplied input features",
+    "Temporal and spatial evaluation protocols are different and their metrics are not directly comparable",
+    "Spatial validation and test locations are not fully independent",
+    "Algerian dataset has limited geographic and temporal coverage",
+    "Original datasets are not included in the latest project archive",
+    "Operational real-time forecasting capability has not been established"
+  ],
+  "next_priority": "Complete documentation, verify dependencies, prepare deployment configuration, and perform clean-environment testing"
+}

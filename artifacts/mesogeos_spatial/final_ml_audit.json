@@ -1,0 +1,133 @@
+{
+  "audit_timestamp": "2026-11-06T18:06:17.757121",
+  "audit_type": "read_only",
+  "checks": {
+    "dataset_feature_count": 27,
+    "excluded_metadata_columns_present": [
+      "burned_area_has",
+      "burned_areas",
+      "ignition_points",
+      "sample",
+      "time",
+      "time_idx",
+      "x",
+      "y"
+    ],
+    "feature_columns": [
+      "aspect",
+      "curvature",
+      "d2m",
+      "dem",
+      "lai",
+      "lst_day",
+      "lst_night",
+      "ndvi",
+      "rh",
+      "roads_distance",
+      "slope",
+      "smi",
+      "sp",
+      "ssrd",
+      "t2m",
+      "tp",
+      "wind_direction",
+      "wind_speed",
+      "lc_agriculture",
+      "lc_forest",
+      "lc_grassland",
+      "lc_settlement",
+      "lc_shrubland",
+      "lc_sparse_vegetation",
+      "lc_water_bodies",
+      "lc_wetland",
+      "population"
+    ],
+    "suspicious_feature_names": [],
+    "source_group_integrity": {
+      "positive": {
+        "groups": 8574,
+        "groups_not_30_rows": 0,
+        "groups_with_inconsistent_coordinates": 0
+      },
+      "negative": {
+        "groups": 17342,
+        "groups_not_30_rows": 0,
+        "groups_with_inconsistent_coordinates": 0
+      }
+    },
+    "temporal_evaluation_found": true,
+    "spatial_evaluation_found": true,
+    "temporal_metrics": {
+      "accuracy": 0.7951028403525955,
+      "precision": 0.6737297391760234,
+      "recall": 0.7520604730553524,
+      "f1": 0.7107434207494123,
+      "roc_auc": 0.8683715967250791,
+      "pr_auc": 0.7837892299973914
+    },
+    "spatial_metrics": {
+      "accuracy": 0.7792726779293032,
+      "precision": 0.6228255845072136,
+      "recall": 0.6005160684963641,
+      "f1": 0.6114674023383851,
+      "roc_auc": 0.8139944192447028,
+      "pr_auc": 0.6541845133186617
+    },
+    "temporal_feature_schema_matches_dataset": true,
+    "spatial_feature_schema_matches_dataset": true,
+    "spatial_manifest_duplicate_group_ids": 0,
+    "spatial_manifest_split_counts": {
+      "train": {
+        "groups": 6666,
+        "fire": 2220,
+        "no_fire": 4446
+      },
+      "validation": {
+        "groups": 4729,
+        "fire": 1773,
+        "no_fire": 2956
+      },
+      "test": {
+        "groups": 4913,
+        "fire": 1421,
+        "no_fire": 3492
+      }
+    },
+    "spatial_min_train_to_heldout_km": 25.0116,
+    "spatial_buffer_pass": true,
+    "validation_to_test_min_distance_km": 1.8176,
+    "validation_to_test_within_25km": 439,
+    "validation_test_separation_note": "No buffer was imposed between validation and test; model selection on validation may be influenced by nearby geography. The training-to-held-out buffer does not solve this separate issue.",
+    "artifact_loadability": {
+      "temporal": {
+        "model_exists": true,
+        "model_loads": true,
+        "imputer_exists": true,
+        "imputer_loads": true,
+        "scaler_exists": true,
+        "scaler_loads": true
+      },
+      "spatial": {
+        "model_exists": true,
+        "model_loads": true,
+        "imputer_exists": true,
+        "imputer_loads": true,
+        "scaler_exists": true,
+        "scaler_loads": true
+      }
+    },
+    "deployment_note": "The backend currently uses artifacts/mesogeos (temporal model) unless model_service.py is explicitly changed. The spatial model is stored separately and is not automatically active in the app.",
+    "limitations_to_document": [
+      "Mesogeos dataset covers a historical Mediterranean domain.",
+      "Temporal and spatial results are different evaluation protocols.",
+      "Spatial split is not chronological; time periods may occur in each split.",
+      "The 25 km buffer separates training locations from validation/test locations.",
+      "No 25 km buffer was imposed between validation and test blocks.",
+      "Historical dataset classification metrics do not establish operational forecast skill.",
+      "Dataset negative sampling affects precision, PR-AUC and class prevalence.",
+      "A feature-name audit cannot prove absence of semantic/temporal leakage."
+    ]
+  },
+  "issues_requiring_attention": [],
+  "status": "PASS_WITH_DOCUMENTED_LIMITATIONS"
+}

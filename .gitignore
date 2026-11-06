@@ -1,0 +1,73 @@
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ==============================
+# Environment and secrets
+# ==============================
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+
+# ==============================
+# SQLite database
+# ==============================
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+
+# ==============================
+# Frontend
+# ==============================
+node_modules/
+dist/
+build/
+*.tsbuildinfo
+.eslintcache
+.vite/
+
+# ==============================
+# Logs and runtime files
+# ==============================
+*.log
+logs/
+tmp/
+temp/
+
+# ==============================
+# IDE and operating system
+# ==============================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==============================
+# Jupyter
+# ==============================
+.ipynb_checkpoints/
+
+# ==============================
+# Generated ML outputs
+# ==============================
+mlruns/
+wandb/

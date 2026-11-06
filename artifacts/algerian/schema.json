@@ -1,0 +1,23 @@
+{
+  "feature_columns": [
+    "Temperature",
+    "Ws",
+    "Rain",
+    "RH",
+    "FFMC",
+    "DMC",
+    "DC",
+    "ISI",
+    "BUI",
+    "FWI"
+  ],
+  "target_column": "Classes",
+  "target_mapping": {
+    "fire": 1,
+    "not fire": 0
+  },
+  "model_type": "xgboost",
+  "random_seed": 42,
+  "n_train": 973,
+  "n_test": 242
+}
